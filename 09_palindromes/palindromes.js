@@ -1,10 +1,10 @@
 const palindromes = (str) => {
-    const processedStr = str.toLowerCase().replaceAll(" ", "");
+    const processedStr = str.toLowerCase().replace(/[\W_]/g, ""); //the weird characters are a regex that remove special chars and spaces
     const reverseStr = [...processedStr].reverse().join("");
 
-    return reverseStr === processedStr;
+    return console.log(reverseStr === processedStr);
 };
 
-palindromes("A nut for a jar of tuna");
+palindromes("A car, a man, a maraca");
 // Do not edit below this line
 module.exports = palindromes;
